@@ -1,0 +1,10 @@
+**/node_modules/
+**/vendor/
+**/.venv/
+**/__pycache__/
+**/*.sqlite
+**/*.sqlite-journal
+**/*.db
+**/*.db-journal
+**/.env
+!**/.env.example

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi API TodoList</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="authView" class="container">
+    <h1>Multi API TodoList</h1>
+    <div class="card">
+        <h2 id="authTitle">Entrar</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required autocomplete="username">
+            <input type="password" id="loginSenha" placeholder="Senha" required autocomplete="current-password">
+            <button type="submit">Entrar</button>
+        </form>
+        <form id="registerForm" class="hidden">
+            <input type="text" id="registerNome" placeholder="Nome" required autocomplete="name">
+            <input type="email" id="registerEmail" placeholder="Email" required autocomplete="username">
+            <input type="password" id="registerSenha" placeholder="Senha (mínimo 6 caracteres)" required minlength="6" autocomplete="new-password">
+            <button type="submit">Criar conta</button>
+        </form>
+        <p id="authError" class="error"></p>
+        <button type="button" id="toggleAuth" class="linkish">Não tem conta? Cadastre-se</button>
+    </div>
+</div>
+
+<div id="appView" class="container hidden">
+    <div class="userbar">
+        <div>
+            <h1>Multi API TodoList</h1>
+            <p class="muted">Olá, <strong id="userName"></strong></p>
+        </div>
+        <button type="button" id="logoutBtn" class="btn-secondary">Sair</button>
+    </div>
+
+    <div class="card">
+        <h2>Nova Tarefa</h2>
+        <form id="todoForm">
+            <input type="text" id="title" placeholder="Título" required>
+            <textarea id="description" placeholder="Descrição"></textarea>
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Lista de Tarefas</h2>
+        <ul id="todoList"></ul>
+    </div>
+
+    <div class="card">
+        <h2>Estatísticas</h2>
+        <p>Total: <span id="total">0</span></p>
+        <p>Concluídas: <span id="completed">0</span></p>
+        <p>Pendentes: <span id="pending">0</span></p>
+    </div>
+
+    <div class="card">
+        <h2>Logs</h2>
+        <ul id="logList"></ul>
+    </div>
+
+    <p id="appError" class="error"></p>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
